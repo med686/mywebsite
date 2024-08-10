@@ -2,20 +2,589 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="mywebsite.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+    rel="stylesheet">
+  <style>
+    body {
+      width: 100%;
+      height: fit-content;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      padding-right: 80px;
+
+    }
+
+    ul {
+      display: flex;
+      list-style: none;
+      padding-right: 270px;
+      padding-top: 10px;
+      color: rgb(144, 113, 77);
+      font-family: cursive;
+      font-size: 30px;
+    }
+
+    img {
+      width: 10%;
+      height: 10%;
+      padding-left: 50px;
+      padding-top: 20px;
+    }
+
+    nav ul li {
+      margin: 10px;
+      text-decoration: none;
+    }
+
+    header {
+      background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(front5.jpg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 650px;
+      margin: 0px;
+    }
+
+    .section2 {
+      width: 1100px;
+      height: 300%;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      justify-content: flex-end;
+      margin-right: 10%;
+
+    }
+
+    #img4 {
+      width: 500px;
+
+      height: 500px;
+      transition: opacity 0.5s ease-in-out;
+      margin-bottom: 15%;
+    }
+
+    #icon2 {
+      padding-top: 12px;
+    }
+
+    .bord {
+      background-color: white;
+      display: flex;
+      border-radius: 30px;
+      height: 50px;
+      align-items: center;
+      margin: 5px;
+      padding: 4px;
+      cursor: pointer;
+      border: 2px solid black;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.75), 0 3px 6px rgba(0, 0, 0, 0.75);
+    }
+
+    .bord :hover {
+      color: bisque;
+      transition: 0.5s ease all;
+      background-color: black;
+    }
+
+    .btn51 {
+
+      font-size: 30px;
+      font-family: cursive;
+      border-radius: 30px;
+    }
+
+    .icon5 {
+      font-size: 24px;
+    }
+
+    #theme {
+      --input-focus: #2d8cf0;
+      --bg-color: #fff;
+      --bg-color-alt: #666;
+      --main-color: #323232;
+      --input-out-of-focus: #ccc;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      width: 70px;
+      height: 36px;
+      transform: translateX(calc(50% - 10px));
+    }
+
+    .toggle {
+      opacity: 0;
+    }
+
+    .slider {
+      box-sizing: border-box;
+      border-radius: 100px;
+      border: 2px solid var(--main-color);
+      box-shadow: 4px 4px var(--main-color);
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: var(--input-out-of-focus);
+      transition: 0.3s;
+    }
+
+    .slider:before {
+      content: "off";
+      box-sizing: border-box;
+      height: 30px;
+      width: 30px;
+      position: absolute;
+      left: 2px;
+      bottom: 1px;
+      border: 2px solid var(--main-color);
+      border-radius: 100px;
+      background-color: var(--bg-color);
+      color: var(--main-color);
+      font-size: 14px;
+      font-weight: 600;
+      text-align: center;
+      line-height: 25px;
+      transition: 0.3s;
+    }
+
+    .toggle:checked+.slider {
+      background-color: var(--input-focus);
+      transform: translateX(-32px);
+    }
+
+    .toggle:checked+.slider:before {
+      content: "on";
+      transform: translateX(32px);
+    }
+
+    .section5 {
+      background: rgb(34, 193, 195);
+      background: linear-gradient(0deg, rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 1) 100%);
+      height: 750px;
+    }
+
+    #p7 {
+      font-size: 25px;
+      font-family: Ubuntu, sans-serif;
+      font-size: 20px;
+      color: #fff;
+    }
+
+    .div50 {
+      padding: 15px;
+      font-size: 20px;
+      margin: 40px;
+      border-radius: 10px;
+    }
+
+    .wrapper {
+      min-height: 3rem;
+      min-width: 20rem;
+      font-size: 2rem;
+      position: relative;
+      overflow: hidden;
+      mask-image: linear-gradient(to right,
+          rgba(0, 0, 0, 0),
+          rgba(0, 0, 0, 1) 30%,
+          rgba(0, 0, 0, 1) 70%,
+          rgba(0, 0, 0, 0));
+      font-family: monospace;
+    }
+
+    .letter {
+      width: 1ch;
+      position: absolute;
+      top: 50%;
+      transform: translate(0px, -50%);
+      left: 100%;
+      animation: scroll 3.5s linear infinite;
+    }
+
+    @keyframes scroll {
+      to {
+        left: -1ch;
+      }
+    }
+
+    .letter1 {
+      animation-delay: calc(3.5s / 24 * (24 - 1) * -1);
+    }
+
+    .letter2 {
+      animation-delay: calc(3.5s / 24 * (24 - 2) * -1);
+    }
+
+    .letter3 {
+      animation-delay: calc(3.5s / 24 * (24 - 3) * -1);
+    }
+
+    .letter4 {
+      animation-delay: calc(3.5s / 24 * (24 - 4) * -1);
+    }
+
+    .letter5 {
+      animation-delay: calc(3.5s / 24 * (24 - 5) * -1);
+    }
+
+    .letter6 {
+      animation-delay: calc(3.5s / 24 * (24 - 6) * -1);
+    }
+
+    .letter7 {
+      animation-delay: calc(3.5s / 24 * (24 - 7) * -1);
+    }
+
+    .letter8 {
+      animation-delay: calc(3.5s / 24 * (24 - 8) * -1);
+    }
+
+    .letter9 {
+      animation-delay: calc(3.5s / 24 * (24 - 9) * -1);
+    }
+
+    .letter10 {
+      animation-delay: calc(3.5s / 24 * (24 - 10) * -1);
+    }
+
+    .letter11 {
+      animation-delay: calc(3.5s / 24 * (24 - 11) * -1);
+    }
+
+    .letter12 {
+      animation-delay: calc(3.5s / 24 * (24 - 12) * -1);
+    }
+
+    .letter13 {
+      animation-delay: calc(3.5s / 24 * (24 - 13) * -1);
+    }
+
+    .letter14 {
+      animation-delay: calc(3.5s / 24 * (24 - 14) * -1);
+    }
+
+    .letter15 {
+      animation-delay: calc(3.5s / 24 * (24 - 15) * -1);
+    }
+
+    .letter16 {
+      animation-delay: calc(3.5s / 24 * (24 - 16) * -1);
+    }
+
+    .letter17 {
+      animation-delay: calc(3.5s / 24 * (24 - 17) * -1);
+    }
+
+    .letter18 {
+      animation-delay: calc(3.5s / 24 * (24 - 18) * -1);
+    }
+
+    .letter19 {
+      animation-delay: calc(3.5s / 24 * (24 - 19) * -1);
+    }
+
+    .letter20 {
+      animation-delay: calc(3.5s / 24 * (24 - 20) * -1);
+    }
+
+    .letter21 {
+      animation-delay: calc(3.5s / 24 * (24 - 21) * -1);
+    }
+
+    .letter22 {
+      animation-delay: calc(3.5s / 24 * (24 - 22) * -1);
+    }
+
+    .letter23 {
+      animation-delay: calc(3.5s / 24 * (24 - 23) * -1);
+    }
+
+    .letter24 {
+      animation-delay: calc(3.5s / 24 * (24 - 24) * -1);
+    }
+
+    .wrapper span {
+      color: yellow;
+    }
+
+    .content h1 {
+      font-family: Ubuntu, sans-serif;
+      font-size: 25px;
+
+    }
+    .content img {
+      width: 80%;
+      height: 80%;
+
+    }
+    .content {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+
+    /*------------------------------------------------------------------------------------*/
+    .parent {
+      width: 290px;
+      height: 300px;
+      perspective: 1000px;
+      
+    }
+
+    .card {
+      background: rgb(34,193,195);
+background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(245,253,45,1) 100%);
+      height: 100%;
+      border-radius: 50px;
+      transition: all 0.5s ease-in-out;
+      transform-style: preserve-3d;
+      box-shadow: rgba(5, 71, 17, 0) 40px 50px 25px -40px, rgba(5, 71, 17, 0.2) 0px 25px 25px -5px;
+    }
+
+    .glass {
+      transform-style: preserve-3d;
+      position: absolute;
+      inset: 8px;
+      border-radius: 55px;
+      border-top-right-radius: 100%;
+
+      transform: translate3d(0px, 0px, 25px);
+      border-left: 1px solid white;
+      border-bottom: 1px solid white;
+      transition: all 0.5s ease-in-out;
+    }
+
+    .content {
+      padding: 100px 60px 0px 30px;
+      transform: translate3d(0, 0, 26px);
+    }
+    .logo {
+      position: absolute;
+      right: 0;
+      top: 0;
+      transform-style: preserve-3d;
+    }
+
+    .logo .circle {
+      display: block;
+      position: absolute;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      top: 0;
+      right: 0;
+      box-shadow: rgba(100, 100, 111, 0.2) -10px 10px 20px 0px;
+      -webkit-backdrop-filter: blur(5px);
+      backdrop-filter: blur(5px);
+      background: rgba(0, 249, 203, 0.2);
+      transition: all 0.5s ease-in-out;
+    }
+
+    .logo .circle4 {
+      width: 80px;
+      transform: translate3d(0, 0, 80px);
+      top: 23px;
+      right: 23px;
+      transition-delay: 1.2s;
+    }
+
+    .logo .circle5 {
+      width: 50px;
+      transform: translate3d(0, 0, 100px);
+      top: 30px;
+      right: 30px;
+      display: grid;
+      place-content: center;
+      transition-delay: 1.6s;
+    }
+
+    .logo .circle5 .svg {
+      width: 20px;
+      fill: white;
+    }
+
+    .parent:hover .card {
+      transform: rotate3d(1, 1, 0, 30deg);
+      box-shadow: rgba(5, 71, 17, 0.3) 30px 50px 25px -40px, rgba(5, 71, 17, 0.1) 0px 25px 30px 0px;
+    }
+
+    .parent:hover .card .bottom .social-buttons-container .social-button {
+      transform: translate3d(0, 0, 50px);
+      box-shadow: rgba(5, 71, 17, 0.2) -5px 20px 10px 0px;
+    }
+
+    .parent:hover .card .logo .circle2 {
+      transform: translate3d(0, 0, 60px);
+    }
+
+    .parent:hover .card .logo .circle3 {
+      transform: translate3d(0, 0, 80px);
+    }
+
+    .parent:hover .card .logo .circle4 {
+      transform: translate3d(0, 0, 100px);
+    }
+
+    .parent:hover .card .logo .circle5 {
+      transform: translate3d(0, 0, 120px);
+    }
+  </style>
 </head>
 
 <body>
-    <section style="background-color: lavender;width: 220px;">
-        <a href="result.html">
-            <img id="img1" src="gameof.png" alt="">
-            <h1>Basketball tournament</h1>
-        </a>
+  <header>
+    <nav>
+      <img src="mario2.png">
+      <ul>
+        <div class="bord" style="width: 180px;padding-left: 10px;justify-content: center;">
+          <div id="icon2"><ion-icon name="game-controller"></ion-icon></div>
+          <li style="margin-right: 15px;">Games</li>
+        </div>
+        <div class="bord">
+          <div id="icon2" style="margin-left: 15px;"><ion-icon name="call"></ion-icon></div>
+          <li>Contact</li>
+        </div>
+      </ul>
+      <label style="margin-top: 30px;">
+        <input checked="" type="checkbox" class="toggle">
+        <span id="theme" class="slider"></span>
+        <span id="theme" class="card-side"></span>
+      </label>
+    </nav>
+    <section style="display: flex;">
+      <div
+        style="padding-left: 20px;padding-right: 20px;margin-left: 200px; border: 3px solid black;box-shadow: 0 2px 10px rgba(0, 0, 0, 0.75), 0 3px 6px rgba(0, 0, 0, 0.75);;border-radius: 10px;height: 350px;width: 400px;text-align: center;align-items: center;background-image: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0)),url(design.webp); background-size: cover; background-position: center;background-repeat: no-repeat;">
 
+        <p
+          style="font-family: Ubuntu, sans-serif;font-size: 50px;font-weight: bold;color: rgb(0, 0, 0);margin-top: 10px;">
+          Discover with us</p>
+
+
+        <a href="#about"><button class="btn51">Start</button></a>
+        <p style="font-size: 30px;font-family: Ubuntu, sans-serif;">12,056 use our website</p>
+
+      </div>
+      <section class="section2">
+        <img id="img4" src="miles.webp" alt="" />
+      </section>
     </section>
+
+  </header>
+  <section class="section5" id="about">
+    <div>
+      <h1
+        style="color: #fff;font-size: 40px;font-family:  Ubuntu, sans-serif;margin: 0px;text-align: center;padding-top: 10px;">
+        About us</h1>
+    </div>
+    <div>
+      <div style="display: flex;">
+        <div class="div50" style=" background-image: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0)),url(back6.webp);
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;">
+          <h2 style="font-family: Ubuntu, sans-serif;color: #fff;">E-learning games</h2>
+          <p id="p7">Educational games are games explicitly designed with educational purposes, or which have
+            incidental or secondary educational value. All types of games may be used in an educational
+            environment, however educational games are games that are designed to help people learn about
+            certain subjects, expand concepts, reinforce development.</p>
+        </div>
+        <div class="div50" style=" background-image: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0)),url(back7.jpg);
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;">
+          <h2 style="font-family: Ubuntu, sans-serif;color: #fff;">Video games</h2>
+          <p id="p7">A video game, also known as a computer game, is an electronic game that can be interacted
+            with using an input device, such as a controller, keyboard, or joystick. Video games can be used
+            for entertainment and relaxation, but they can also be used for competitions and for computer
+            learning.</p>
+        </div>
+      </div>
+      <div class="div50" style="background-image: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0)),url(back9.avif);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;margin-top: 5px;">
+        <h2 style="font-family: Ubuntu, sans-serif;color: #fff;">Why should you play our games ?</h2>
+        <p id="p7">Many games encourage creative thinking through complex worlds and storylines, often allowing players
+          to create their own content or solutions.</p>
+        <p id="p7">Educational games can teach subjects like history, sience, and languages in an engaging and
+          interactive manner.</p>
+      </div>
+      <div class="wrapper">
+        <div class="wrapper">
+          <span class="letter letter1">L</span>
+          <span class="letter letter2">E</span>
+          <span class="letter letter3">T</span>
+          <span class="letter letter4">'</span>
+          <span class="letter letter5">S</span>
+          <span class="letter letter6"> </span>
+          <span class="letter letter7">P</span>
+          <span class="letter letter8">L</span>
+          <span class="letter letter9">A</span>
+          <span class="letter letter10">Y</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <section>
+    <div class="games">
+      <img src="2k.png" alt="">
+      <h1>Nba tournament</h1>
+      <a href="result.html"><button>Play</button></a>
+    </div>
+    <div></div>
+    <div></div>
+  </section>
+
+
+  <section>
+    <div class="parent">
+      <div class="card">
+        <div class="logo">
+
+          <span class="circle circle4"></span>
+          <span class="circle circle5">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29.667 31.69" class="svg">
+              <path id="Path_6" data-name="Path 6"
+                d="M12.827,1.628A1.561,1.561,0,0,1,14.31,0h2.964a1.561,1.561,0,0,1,1.483,1.628v11.9a9.252,9.252,0,0,1-2.432,6.852q-2.432,2.409-6.963,2.409T2.4,20.452Q0,18.094,0,13.669V1.628A1.561,1.561,0,0,1,1.483,0h2.98A1.561,1.561,0,0,1,5.947,1.628V13.191a5.635,5.635,0,0,0,.85,3.451,3.153,3.153,0,0,0,2.632,1.094,3.032,3.032,0,0,0,2.582-1.076,5.836,5.836,0,0,0,.816-3.486Z"
+                transform="translate(0 0)"></path>
+              <path id="Path_7" data-name="Path 7"
+                d="M75.207,20.857a1.561,1.561,0,0,1-1.483,1.628h-2.98a1.561,1.561,0,0,1-1.483-1.628V1.628A1.561,1.561,0,0,1,70.743,0h2.98a1.561,1.561,0,0,1,1.483,1.628Z"
+                transform="translate(-45.91 0)"></path>
+              <path id="Path_8" data-name="Path 8"
+                d="M0,80.018A1.561,1.561,0,0,1,1.483,78.39h26.7a1.561,1.561,0,0,1,1.483,1.628v2.006a1.561,1.561,0,0,1-1.483,1.628H1.483A1.561,1.561,0,0,1,0,82.025Z"
+                transform="translate(0 -51.963)"></path>
+            </svg>
+          </span>
+        </div>
+        <div class="glass"></div>
+        <div class="content">
+          <img src="2k.png" alt="">
+          <h1>Nba tournament</h1>
+          <a href="result.html"><button>Play</button></a>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script src="./games.js"></script>
 </body>
 
 </html>

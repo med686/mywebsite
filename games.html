@@ -327,30 +327,35 @@
       font-size: 25px;
 
     }
+
     .content img {
       width: 80%;
       height: 80%;
-
+      margin-top: -5px;
+      margin-left: -20px;
     }
+
     .content {
       display: flex;
       justify-content: center;
+      align-items: center;
       flex-direction: column;
     }
 
 
     /*------------------------------------------------------------------------------------*/
     .parent {
-      width: 290px;
-      height: 300px;
+      width: 310px;
+      height: 330px;
       perspective: 1000px;
-      
+      margin-top: 10px;
+      margin-left: 30px;
     }
 
     .card {
-      background: rgb(34,193,195);
-background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(245,253,45,1) 100%);
-      height: 100%;
+      background: rgb(34, 193, 195);
+      background: linear-gradient(0deg, rgba(34, 193, 195, 1) 0%, rgba(245, 253, 45, 1) 100%);
+      height: 110%;
       border-radius: 50px;
       transition: all 0.5s ease-in-out;
       transform-style: preserve-3d;
@@ -374,6 +379,7 @@ background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(245,253,45,1) 100%
       padding: 100px 60px 0px 30px;
       transform: translate3d(0, 0, 26px);
     }
+
     .logo {
       position: absolute;
       right: 0;
@@ -443,6 +449,57 @@ background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(245,253,45,1) 100%
     .parent:hover .card .logo .circle5 {
       transform: translate3d(0, 0, 120px);
     }
+    /* From Uiverse.io by vinodjangid07 */ 
+.Btn-Container {
+  display: flex;
+  width: 170px;
+  height: fit-content;
+  background-color: #1d2129;
+  border-radius: 40px;
+  box-shadow: 0px 5px 10px #bebebe;
+  justify-content: space-between;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+}
+.icon-Container {
+  width: 45px;
+  height: 45px;
+  background-color: #f59aff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 3px solid #1d2129;
+}
+.text {
+  width: calc(170px - 45px);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.1em;
+  letter-spacing: 1.2px;
+}
+.icon-Container svg {
+  transition-duration: 1.5s;
+}
+.Btn-Container:hover .icon-Container svg {
+  transition-duration: 1.5s;
+  animation: arrow 1s linear infinite;
+}
+@keyframes arrow {
+  0% {
+    opacity: 0;
+    margin-left: 0px;
+  }
+  100% {
+    opacity: 1;
+    margin-left: 10px;
+  }
+}
+
   </style>
 </head>
 
@@ -541,47 +598,105 @@ background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(245,253,45,1) 100%
 
     </div>
   </section>
-  <section>
-    <div class="games">
-      <img src="2k.png" alt="">
-      <h1>Nba tournament</h1>
-      <a href="result.html"><button>Play</button></a>
-    </div>
-    <div></div>
-    <div></div>
-  </section>
-
-
-  <section>
+  <section style="display: flex;">
     <div class="parent">
       <div class="card">
         <div class="logo">
 
           <span class="circle circle4"></span>
           <span class="circle circle5">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29.667 31.69" class="svg">
-              <path id="Path_6" data-name="Path 6"
-                d="M12.827,1.628A1.561,1.561,0,0,1,14.31,0h2.964a1.561,1.561,0,0,1,1.483,1.628v11.9a9.252,9.252,0,0,1-2.432,6.852q-2.432,2.409-6.963,2.409T2.4,20.452Q0,18.094,0,13.669V1.628A1.561,1.561,0,0,1,1.483,0h2.98A1.561,1.561,0,0,1,5.947,1.628V13.191a5.635,5.635,0,0,0,.85,3.451,3.153,3.153,0,0,0,2.632,1.094,3.032,3.032,0,0,0,2.582-1.076,5.836,5.836,0,0,0,.816-3.486Z"
-                transform="translate(0 0)"></path>
-              <path id="Path_7" data-name="Path 7"
-                d="M75.207,20.857a1.561,1.561,0,0,1-1.483,1.628h-2.98a1.561,1.561,0,0,1-1.483-1.628V1.628A1.561,1.561,0,0,1,70.743,0h2.98a1.561,1.561,0,0,1,1.483,1.628Z"
-                transform="translate(-45.91 0)"></path>
-              <path id="Path_8" data-name="Path 8"
-                d="M0,80.018A1.561,1.561,0,0,1,1.483,78.39h26.7a1.561,1.561,0,0,1,1.483,1.628v2.006a1.561,1.561,0,0,1-1.483,1.628H1.483A1.561,1.561,0,0,1,0,82.025Z"
-                transform="translate(0 -51.963)"></path>
-            </svg>
+            <ion-icon name="game-controller-outline" style="width: 30px;height: 30px;"></ion-icon>
           </span>
         </div>
         <div class="glass"></div>
         <div class="content">
-          <img src="2k.png" alt="">
-          <h1>Nba tournament</h1>
-          <a href="result.html"><button>Play</button></a>
+          <img src="mine.png" alt="" style="width: 50%;">
+          <h1>Bowl man</h1>
+          <a href="bowl.html" style="text-decoration: none;">
+          
+<button class="Btn-Container">
+  <span class="text">let's go!</span>
+  <span class="icon-Container">
+    <svg
+      width="16"
+      height="19"
+      viewBox="0 0 16 19"
+      fill="nones"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle cx="1.61321" cy="1.61321" r="1.5" fill="black"></circle>
+      <circle cx="5.73583" cy="1.61321" r="1.5" fill="black"></circle>
+      <circle cx="5.73583" cy="5.5566" r="1.5" fill="black"></circle>
+      <circle cx="9.85851" cy="5.5566" r="1.5" fill="black"></circle>
+      <circle cx="9.85851" cy="9.5" r="1.5" fill="black"></circle>
+      <circle cx="13.9811" cy="9.5" r="1.5" fill="black"></circle>
+      <circle cx="5.73583" cy="13.4434" r="1.5" fill="black"></circle>
+      <circle cx="9.85851" cy="13.4434" r="1.5" fill="black"></circle>
+      <circle cx="1.61321" cy="17.3868" r="1.5" fill="black"></circle>
+      <circle cx="5.73583" cy="17.3868" r="1.5" fill="black"></circle>
+    </svg>
+  </span>
+</button>
+
+          </a>
         </div>
       </div>
     </div>
+    <div>
+
+
+    </div>
+      <div class="parent" style="align-items: center;">
+        <div class="card" style="height: 110%;width: 100%;">
+          <div class="logo">
+  
+            <span class="circle circle4"></span>
+            <span class="circle circle5">
+              <ion-icon name="game-controller-outline" style="width: 30px;height: 30px;"></ion-icon>
+            </span>
+          </div>
+          <div class="glass"></div>
+          <div class="content">
+            <img src="chick1.png" alt="" style="width: 50%;">
+            <h1>Chick/go</h1>
+            <a href="chick.html" style="text-decoration: none;">
+            
+  <button class="Btn-Container">
+    <span class="text">let's go!</span>
+    <span class="icon-Container">
+      <svg
+        width="16"
+        height="19"
+        viewBox="0 0 16 19"
+        fill="nones"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle cx="1.61321" cy="1.61321" r="1.5" fill="black"></circle>
+        <circle cx="5.73583" cy="1.61321" r="1.5" fill="black"></circle>
+        <circle cx="5.73583" cy="5.5566" r="1.5" fill="black"></circle>
+        <circle cx="9.85851" cy="5.5566" r="1.5" fill="black"></circle>
+        <circle cx="9.85851" cy="9.5" r="1.5" fill="black"></circle>
+        <circle cx="13.9811" cy="9.5" r="1.5" fill="black"></circle>
+        <circle cx="5.73583" cy="13.4434" r="1.5" fill="black"></circle>
+        <circle cx="9.85851" cy="13.4434" r="1.5" fill="black"></circle>
+        <circle cx="1.61321" cy="17.3868" r="1.5" fill="black"></circle>
+        <circle cx="5.73583" cy="17.3868" r="1.5" fill="black"></circle>
+      </svg>
+    </span>
+  </button>
+  
+            </a>
+          </div>
+        </div>
+      </div>
+      <div>
+  
+        
     </div>
   </section>
+
+
+
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   <script src="./games.js"></script>

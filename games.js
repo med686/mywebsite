@@ -1,6 +1,6 @@
 
 
-let images = ['miles.webp', 'michael1.png', '47h.png']
+let images = ['miles.webp', 'michael1.png', 'kobe55.png']
 let indice = 0
 let element = document.getElementById('img4')
 element.addEventListener('dblclick', () =>{
